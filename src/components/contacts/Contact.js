@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import { connect } from 'react-redux';
+import {deleteContact} from '../../actions/contactActions';
 class Contact extends Component {
   state = {
     showContactInfo: true
@@ -9,6 +10,7 @@ class Contact extends Component {
 
   onDeleteClick = id => {
     //// DELETE CONTACT ////
+    this.props.deleteContact(id);
   };
 
   render() {
@@ -19,6 +21,8 @@ class Contact extends Component {
       <div className="card card-body mb-3">
         <h4>
           {name}{' '}
+          <h6 style={{color:"red"}}>{id}</h6>
+
           <i
             onClick={() =>
               this.setState({
@@ -60,4 +64,4 @@ Contact.propTypes = {
   contact: PropTypes.object.isRequired
 };
 
-export default Contact;
+export default connect(null, { deleteContact })(Contact);

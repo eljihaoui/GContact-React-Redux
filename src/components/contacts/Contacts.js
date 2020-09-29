@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Contact from './Contact';
 import { connect } from 'react-redux';
+import { getContacts } from '../../actions/contactActions';
 class Contacts extends Component {
-  componentDidMount(){
-    this.props.getContacts();
-  }
+  componentDidMount() {
+    this.props.getContacts(); /*2*/
+  } 
   render() {
     const { contacts } = this.props;//2 this.props contains contacts
     return (
@@ -25,13 +26,13 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getContacts: () => {
-      dispatch({
-        type: 'GET_CONTACTS'
-      })
-    }
-  }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Contacts);
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     getContacts: () => {
+//       dispatch({
+//         type: 'GET_CONTACTS'
+//       })
+//     }
+//   }
+// }
+export default connect(mapStateToProps, { getContacts/*2*/ })(Contacts);
