@@ -21,7 +21,7 @@ class Contact extends Component {
       <div className="card card-body mb-3">
         <h4>
           {name}{' '}
-          <h6 style={{color:"red"}}>{id}</h6>
+          <span style={{color:"red"}}>{id}</span>
 
           <i
             onClick={() =>

@@ -1,35 +1,37 @@
 const initialState = {
     contacts: [
-        {
-            id: 1,
-            name: 'Mohamed IDBRAHIM',
-            email: 'idbrahimdev@gmail.com',
-            phone: '0650303315'
-        },
-        {
-            id: 2,
-            name: 'Basma IDBRAHIM',
-            email: 'basma@gmail.com',
-            phone: '0650303316'
-        },
-        {
-            id: 3,
-            name: 'Walid IDBRAHIM',
-            email: 'walid@gmail.com',
-            phone: '0650303317'
-        }, {
-            id: 4,
-            name: 'jhaoui mohamed',
-            email: 'walid@gmail.com',
-            phone: '0650303317'
-        }
-    ]
+    //     {
+    //         id: 1,
+    //         name: 'Mohamed IDBRAHIM',
+    //         email: 'idbrahimdev@gmail.com',
+    //         phone: '0650303315'
+    //     },
+    //     {
+    //         id: 2,
+    //         name: 'Basma IDBRAHIM',
+    //         email: 'basma@gmail.com',
+    //         phone: '0650303316'
+    //     },
+    //     {
+    //         id: 3,
+    //         name: 'Walid IDBRAHIM',
+    //         email: 'walid@gmail.com',
+    //         phone: '0650303317'
+    //     }, {
+    //         id: 4,
+    //         name: 'jhaoui mohamed',
+    //         email: 'walid@gmail.com',
+    //         phone: '0650303317'
+    //     }
+     ]
 }
 export default function (state = initialState, action) {
     switch (action.type) {
         case 'GET_CONTACTS':
             return {
-                ...state  // ou return state
+                ...state,  // ou return state
+                contacts : action.payload
+
             }
         case "DELETE_CONTACT":
             return {
